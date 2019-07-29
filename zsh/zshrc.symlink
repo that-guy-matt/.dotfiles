@@ -1,40 +1,50 @@
-# Set up the prompt
-
-autoload -Uz promptinit
-promptinit
-prompt adam1
-
-setopt histignorealldups sharehistory
-
-# Use emacs keybindings even if our EDITOR is set to vi
-bindkey -e
-
-# Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
-HISTSIZE=1000
-SAVEHIST=1000
-HISTFILE=~/.zsh_history
-
-# Use modern completion system
-autoload -Uz compinit
-compinit
-
-zstyle ':completion:*' auto-description 'specify: %d'
-zstyle ':completion:*' completer _expand _complete _correct _approximate
-zstyle ':completion:*' format 'Completing %d'
-zstyle ':completion:*' group-name ''
-zstyle ':completion:*' menu select=2
-eval "$(dircolors -b)"
-zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
-zstyle ':completion:*' list-colors ''
-zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
-zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
-zstyle ':completion:*' menu select=long
-zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
-zstyle ':completion:*' use-compctl false
-zstyle ':completion:*' verbose true
-
-zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
-zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
+# shortcut to this dotfiles path is $ZSH
+export ZSH=$HOME/.dotfiles
 
 # use powerlevel9k theme
 source $HOME/powerlevel9k/powerlevel9k.zsh-theme
+
+# Stash your environment variables in ~/.localrc. This means they'll stay out
+# of your main dotfiles repository (which may be public, like this one), but
+# you'll have access to them in your scripts.
+if [[ -a ~/.localrc ]]
+then
+  source ~/.localrc
+fi
+
+# all of our zsh files
+typeset -U config_files
+config_files=($ZSH/**/*.zsh)
+
+# load the path files
+for file in ${(M)config_files:#*/path.zsh}
+do
+  source $file
+done
+
+# load everything but the path and completion files
+for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}
+do
+  source $file
+done
+
+# initialize autocomplete here, otherwise functions won't be loaded
+autoload -U compinit
+compinit
+
+# load every completion after autocomplete loads
+for file in ${(M)config_files:#*/completion.zsh}
+do
+  source $file
+done
+
+unset config_files
+
+# Better history
+# Credits to https://coderwall.com/p/jpj_6q/zsh-better-history-searching-with-arrow-keys
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "^[[A" up-line-or-beginning-search # Up
+bindkey "^[[B" down-line-or-beginning-search # Down
