@@ -13,4 +13,4 @@ alias ll='ls -alF --color=auto'
 alias grep='grep --color=auto'
 
 # updates
-alias update='sudo apt update && sudo apt upgrade -y'
+alias update='sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y'
