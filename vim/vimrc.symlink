@@ -8,3 +8,8 @@ set shiftwidth=4
 
 " on pressint tab, insert 4 spaces
 set expandtab
+
+" testing issues with colors inside tmux
+
+set background=dark
+set t_Co=256
