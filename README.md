@@ -16,11 +16,11 @@ I set this up that when the install script is run, it installs necessary program
 
 For a first time setup, the installer should be run first which will install all the programs listed in install.sh script files. From within .dotfiles/setup as root or with sudo:
 
-    # bash install
+    bash install
 
 After running the installer, running the bootstrap script (borrowed from Zach Holman) will set up all symlinks so they do not have to be symlinked again. From within .dotfiles/setup as root or with sudo:
 
-    # bash bootstrap
+    bash bootstrap
 
 You will have to restart the computer before zsh will become the default shell.
 
