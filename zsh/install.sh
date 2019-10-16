@@ -3,7 +3,7 @@
 if [ $(dpkg-query -W -f='${Status}' zsh 2>/dev/null | grep -c "ok installed") -eq 0 ];
 then
     echo "installing zsh..."
-    sudo apt install zsh;
+    sudo apt install zsh -y;
     sudo usermod -s $(which zsh) $USER;
 else
     echo "zsh is already installed... moving on"
