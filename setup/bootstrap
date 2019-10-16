@@ -30,8 +30,30 @@ fail () {
   exit
 }
 
-# I skipped zach's gitconfig... I am not sure why.
-# I will set it up later.
+setup_gitconfig() {
+    if ! [ -f git/gitconfig.local.symlink ]
+    then
+        info 'setup gitconfig'
+
+        git_credential='cache'
+        # I don't think this is needed at all
+        # but I am keeping it in case I am ever
+        # held prisoner on a Mac...
+        if [ "$(uname -s)" == "Darwin" ]
+        then
+            git_credential="osxkeychain"
+        fi
+
+        user ' - What is your github author name?'
+        read -e git_authorname
+        user ' - What is your github author email?'
+        read -e git_authoremail
+
+        sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" -e "s/GIT_CREDENTIAL_HELPER/$git_credential/g" git/gitconfig.local.symlink.example > git/gitconfig.local.symlink
+
+        success 'gitconfig'
+    fi
+}
 
 # check of files exist in home directory
 # ask user how to handle conflicts
@@ -123,6 +145,7 @@ install_dotfiles () {
   done
 }
 
+setup_gitconfig
 install_dotfiles
 
 echo ''
