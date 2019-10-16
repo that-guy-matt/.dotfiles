@@ -1,0 +1,40 @@
+# Generic gitignore file.
+# This file should cover most generic
+# files that you may want git to ignore
+
+# Thanks to pksunkara for the example gitignore file
+
+######## compiled source files #########
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+####### temporary files ########
+*.swp
+*.swo
+*.tmp
+*~
+
+###### packages #######
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+###### log files #######
+*.log
+
+###### OS generated files ######
+.DS_Store*
+ethumbs.db
+Icon?
+Thumbs.db
+
+*.lock
