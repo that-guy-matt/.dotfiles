@@ -10,7 +10,7 @@ alias ....='cd ../../..'
 alias h='history'
 
 # colorizses some output... I prefer this
-alias ls='ls --color=auto'
+alias ls='ls -F --color=auto'
 alias la='ls -A --color=auto'
 alias ll='ls -alF --color=auto'
 
