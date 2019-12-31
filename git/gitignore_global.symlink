@@ -12,6 +12,7 @@ git/gitconfig.local.symlink
 *.exe
 *.o
 *.so
+*.map
 
 # Temporary files #
 ###################
