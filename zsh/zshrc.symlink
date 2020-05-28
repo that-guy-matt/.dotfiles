@@ -1,8 +1,10 @@
 # start tmux when zsh starts
-
-if [ "$TMUX" = "" ];
-then tmux;
-fi
+# I removed this because it makes terminal start a bit slow
+# I can start it when I want to use it.
+#
+#if [ "$TMUX" = "" ];
+#then tmux;
+#fi
 
 # satisfy tmux need for 256 colors
 export TERM="xterm-256color"
