@@ -32,3 +32,6 @@ alias reboot='sudo shutdown -r now'
 
 # updates
 alias update='sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y'
+
+# misc.
+alias shark='sudo surfshark-vpn'
