@@ -55,7 +55,7 @@ setup_gitconfig() {
     fi
 }
 
-# check of files exist in home directory
+# check if files exist in home directory
 # ask user how to handle conflicts
 link_file () {
   local src=$1 dst=$2
