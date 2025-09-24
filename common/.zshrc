@@ -14,6 +14,7 @@ bindkey -e
 # End of lines configured by zsh-newuser-install
 
 # User inputted items
+[ -f "$HOME/.shell_exports" ] && source "$HOME/.shell_exports"
 
 # Platform specific PATHs
 case "$(uname)" in
@@ -25,8 +26,3 @@ case "$(uname)" in
 	;;
 esac
 
-# Aliases
-alias ls="ls --color=auto"
-alias la="ls -a --color=auto"
-alias ll="ls -l --color=auto"
-alias lal="ls -la --color=auto"

@@ -1,0 +1,25 @@
+# These are custom config information that are imported into .zshrc and .bashrc.
+# The reason for this is using .bashrc as a fallback if I am on a system that
+# does not have zsh installed.
+
+# ===== PATH =====
+
+export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="/var/lib/flatpak/exports/bin:$PATH"
+
+# ===== Aliases =====
+
+alias ls="ls --color=auto"
+alias la="ls -A --color=auto"
+alias ll="ls -alF --color=auto"
+alias l="ls -CF --color=auto"
+
+# ===== Flatpak apps =====
+
+alias obsidian="flatpak run md.Obsidian.Obsidian"
+
+# ===== Functions =====
+codium() {
+    /var/lib/flatpak/exports/bin/com.vscodium.codium "$@"
+}
