@@ -13,6 +13,9 @@ Within the the subdirectory /common contains configuration files that are common
 * Dparture
 * Open Dyslexic (as an option)
 
+## Color theme
+I am currently using catpuccin mocha as the terminal color theme. I am not sure I like it, but it seems popular. I may replace this if I stumble upon a better color theme.
+
 ## Configuration notes
 I use zsh mainly, but most of the configs are set in the /common/shell_exports file which is then imported into the .zshrc and .bashrc files, thus any settings that work for both are set there and imported into the respective rc file.
 
