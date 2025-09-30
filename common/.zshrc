@@ -26,3 +26,6 @@ case "$(uname)" in
 	;;
 esac
 
+# run on start
+clear
+fastfetch
