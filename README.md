@@ -28,3 +28,5 @@ These dotfiles assume the following are installed:
 4. the prior mentioned nerdfonts
 5. fastfetch
 6. polybar
+7. stow
+8. neovim
