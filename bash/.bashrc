@@ -9,4 +9,4 @@
 
 # User inputted items
 [ -f "$HOME/.shell_exports" ] && source "$HOME/.shell_exports"
-
+[ -f "$HOME/.aliases" ] && source "$HOME/.aliases"

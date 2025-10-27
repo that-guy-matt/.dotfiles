@@ -15,6 +15,7 @@ bindkey -e
 
 # User inputted items
 [ -f "$HOME/.shell_exports" ] && source "$HOME/.shell_exports"
+[ -f "$HOME/.aliases" ] && source "$HOME/.aliases"
 
 # Platform specific PATHs
 case "$(uname)" in
@@ -26,6 +27,3 @@ case "$(uname)" in
 	;;
 esac
 
-# run on start
-clear
-fastfetch
