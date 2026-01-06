@@ -21,8 +21,8 @@ bindkey -e
 # End of lines configured by zsh-newuser-install
 
 # User inputted items
-[ -f "$HOME/.shell_exports" ] && source "$HOME/.shell_exports"
-[ -f "$HOME/.aliases" ] && source "$HOME/.aliases"
+[ -f "$HOME/.config/zsh/.shell_exports" ] && source "$HOME/.config/zsh/.shell_exports"
+[ -f "$HOME/.config/zsh/.aliases" ] && source "$HOME/.config/zsh/.aliases"
 
 # Platform specific PATHs
 case "$(uname)" in
