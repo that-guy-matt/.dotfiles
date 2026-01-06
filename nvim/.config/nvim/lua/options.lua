@@ -7,7 +7,7 @@
 vim.o.number = true
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
--- vim.o.relativenumber = true
+vim.o.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.o.mouse = 'a'
@@ -72,3 +72,30 @@ vim.o.scrolloff = 10
 vim.o.confirm = true
 
 -- vim: ts=2 sts=2 sw=2 et
+
+-- CUSTOM OPTIONS ADDED BELOW
+
+-- Set tab stops to 2 spaces
+vim.o.tabstop = 2
+vim.o.softtabstop = 2
+vim.o.shiftwidth = 2
+vim.o.expandtab = true
+vim.o.autoindent = true
+
+-- Disable line wrapping
+vim.o.wrap = false
+
+-- Disable swap files (not sure if I want this)
+vim.o.swapfile = false
+
+-- Enable incremental search
+vim.o.incsearch = true
+
+-- Enable true color support
+vim.o.termguicolors = true
+
+-- Always show the sign column (prevents line shift)
+vim.o.signcolumn = 'yes'
+
+-- Visual guide at 80 characters
+-- vim.o.colorcolumn = '80'
