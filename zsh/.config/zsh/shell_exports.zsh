@@ -8,10 +8,6 @@ export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="/var/lib/flatpak/exports/bin:$PATH"
 
-# ===== Aliases =====
-
-# moved aliases to own file .aliases
-
 # ===== Flatpak apps =====
 
 alias obsidian="flatpak run md.Obsidian.Obsidian"

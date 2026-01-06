@@ -1,33 +1,31 @@
 eval "$(/opt/homebrew/bin/brew shellenv)"
 export PATH=$PATH:~/local/bin
-#alias pip /opt/homebrew/bin/pip3
-#eval "$(pyenv init -)"
-#eval "$(pyenv virtualenv-init -)"
-export PYENV_ROOT="$HOME/.pyenv"
-    command -v pyenv >/dev/null && eval "$(pyenv init -)"
-    eval "$(pyenv virtualenv-init -)"# The following lines were added by compinstall
 
-zstyle ':completion:*' completer _complete _ignored _approximate
-zstyle :compinstall filename '/home/matthew/.zshrc'
+# path to zsh config files
+ZSH_CONFIG="$HOME/.config/zsh"
+ZINIT_DIR="$HOME/.config/zsh/.zinit"
 
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
-# Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
-bindkey -e
-# End of lines configured by zsh-newuser-install
+# Sourced config files
+# Load zinit and plugins
+if [[ ! -f "$ZINIT_DIR/bin/zinit.zsh" ]]; then
+  mkdir -p "$ZINIT_DIR"
+  git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_DIR/bin"
+fi
 
-# User inputted items
-[ -f "$HOME/.config/zsh/.shell_exports" ] && source "$HOME/.config/zsh/.shell_exports"
-[ -f "$HOME/.config/zsh/.aliases" ] && source "$HOME/.config/zsh/.aliases"
+# Source zinit and plugins
+source "$ZINIT_DIR/bin/zinit.zsh"
+source "$ZSH_CONFIG/.plugins.zsh"
+
+# Source modular config files
+source "$ZSH_CONFIG/.options.zsh"
+source "$ZSH_CONFIG/.aliases.zsh"
+
 
 # Platform specific PATHs
 case "$(uname)" in
 	Darwin)
 		export PATH="/opt/homebrew/bin:$PATH"
+    source "$HOME/.work.zsh"
 	;;
 	Linux)
 		# unused at the moment
@@ -36,4 +34,3 @@ esac
 
 clear
 fastfetch -l "oracle"
-export PATH_TO_FX="/Users/User/Documents/javafx-sdk-23.0.2/lib"
