@@ -1,4 +1,11 @@
-# The following lines were added by compinstall
+eval "$(/opt/homebrew/bin/brew shellenv)"
+export PATH=$PATH:~/local/bin
+#alias pip /opt/homebrew/bin/pip3
+#eval "$(pyenv init -)"
+#eval "$(pyenv virtualenv-init -)"
+export PYENV_ROOT="$HOME/.pyenv"
+    command -v pyenv >/dev/null && eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"# The following lines were added by compinstall
 
 zstyle ':completion:*' completer _complete _ignored _approximate
 zstyle :compinstall filename '/home/matthew/.zshrc'
@@ -27,3 +34,6 @@ case "$(uname)" in
 	;;
 esac
 
+clear
+fastfetch -l "oracle"
+export PATH_TO_FX="/Users/User/Documents/javafx-sdk-23.0.2/lib"
