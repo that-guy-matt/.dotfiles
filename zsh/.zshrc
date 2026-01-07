@@ -21,11 +21,11 @@ fi
 
 # Source zinit and plugins
 source "$ZINIT_DIR/bin/zinit.zsh"
-source "$ZSH_CONFIG/.plugins.zsh"
+source "$ZSH_CONFIG/plugins.zsh"
 
 # Source modular config files
-source "$ZSH_CONFIG/.options.zsh"
-source "$ZSH_CONFIG/.aliases.zsh"
+source "$ZSH_CONFIG/options.zsh"
+source "$ZSH_CONFIG/aliases.zsh"
 
 # Plugins
 # Powerlevel10k
@@ -44,28 +44,7 @@ case "$(uname)" in
 esac
 
 clear
-fastfetch -l "oracle"
-
-# Start debugging
-echo "Starting .zshrc loading..." >> ~/zsh_debug.log
-set -x  # Enable command tracing
-
-# Define config directory
-ZSH_CONFIG="$HOME/.config/zsh"
-echo "Config dir is: $ZSH_CONFIG" >> ~/zsh_debug.log
-
-# Source aliases, plugins, options, etc.
-echo "Sourcing aliases.zsh" >> ~/zsh_debug.log
-source "$ZSH_CONFIG/aliases.zsh" >> ~/zsh_debug.log 2>&1
-
-echo "Sourcing plugins.zsh" >> ~/zsh_debug.log
-source "$ZSH_CONFIG/plugins.zsh" >> ~/zsh_debug.log 2>&1
-
-echo "Sourcing options.zsh" >> ~/zsh_debug.log
-source "$ZSH_CONFIG/options.zsh" >> ~/zsh_debug.log 2>&1
-
-echo "Sourcing keybindings.zsh" >> ~/zsh_debug.log
-source "$ZSH_CONFIG/keybindings.zsh" >> ~/zsh_debug.log 2>&1
+fastfetch -l "Aperture"
 
 # Source Powerlevel10k if available
 if [[ -f "$ZSH_CONFIG/.p10k.zsh" ]]; then
