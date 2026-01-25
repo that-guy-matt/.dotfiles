@@ -1,0 +1,8 @@
+# This file holds settings for general window manager and workspace behavior
+
+[/]
+# Pre-create 6 workspaces (dynamic workspaces should still work beyond the initial 6)
+num-workspaces=6
+
+# Optional: name the workspaces
+workspace-names=['Terminal','Web','Chat','Media','Notes','Misc']

@@ -30,3 +30,10 @@ These dotfiles assume the following are installed:
 6. polybar
 7. stow
 8. neovim
+
+## Steps
+1. Install dependencies
+2. Change shell to zsh if not the default
+    a. chsh -s /usr/bin/zsh
+3. Install GNOME keyboard shortcuts, run .dotfiles/gnome/gnome-restore.sh
+    a. Currently only window management shortcuts work. Application shortcuts do not. I need to look at this.

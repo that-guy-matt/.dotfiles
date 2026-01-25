@@ -1,0 +1,18 @@
+[custom0]
+name='Launch Kitty'
+command='kitty'
+binding='<Super>Return'
+
+[custom1]
+name='Launch Browser'
+command='firefox'
+binding='<Super>b'
+
+[custom2]
+name='Launch Files'
+command='nautilus'
+binding='<Super>e'
+
+[/]
+# creates the array of keybindings
+custom-keybindings=['custom0','custom1','custom2']
