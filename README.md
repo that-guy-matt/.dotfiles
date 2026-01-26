@@ -4,10 +4,6 @@ The goal of this version of my dotfiles is to simplify the system by using GNU s
 I may add scripts in the future, but only if they will not add complexity. I want these dotfiles to easily install on any Linux system without a struggle.
 My old dotfiles are still accessible through a branch labeled dotfiles-old.
 
-## Systems
-I attempt to separate Linux specific configurations from ones that work on Unix, so in theory they can be made compatible with MacOS which I use for work.
-Within the the subdirectory /common contains configuration files that are common between my MacOS setup and my Linux set up. Currently, the main commonality is the .zshrc config file.
-
 ## Fonts used
 * Hack Nerd Font
 * Dparture
@@ -16,9 +12,6 @@ Within the the subdirectory /common contains configuration files that are common
 ## Color theme
 I am currently using catpuccin mocha as the terminal color theme. I am not sure I like it, but it seems popular. I may replace this if I stumble upon a better color theme.
 I have added options to change themes to dracula or nord
-
-## Configuration notes
-I use zsh mainly, but most of the configs are set in the /common/shell_exports file which is then imported into the .zshrc and .bashrc files, thus any settings that work for both are set there and imported into the respective rc file.
 
 ## Dependencies
 These dotfiles assume the following are installed:
@@ -30,6 +23,21 @@ These dotfiles assume the following are installed:
 6. polybar
 7. stow
 8. neovim
+
+## kickstart-modular.nvim installation
+Dependencies:
+1. Basic utilities: git, make, unzip, gcc
+2. ripgrep, fd-find
+
+Ensure treesitter install directory is in runtimepath (need to fix this. shouldn't edit kickstart's init.lua)
+Add this code to the top of init.lua:
+```
+-- Ensure treesitter install dir is in runtimepath
+local install_dir = vim.fn.stdpath("data") .. "/site"
+if not vim.tbl_contains(vim.opt.rtp:get(), install_dir) then
+  vim.opt.rtp:append(install_dir)
+end
+```
 
 ## Steps
 1. Install dependencies
