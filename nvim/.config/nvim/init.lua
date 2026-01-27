@@ -1,5 +1,10 @@
--- This is my custom neovim dotfiles.
--- Right now, this file only contains a require for my subdirectory 
+-- ~/.config/nvim/init.lua
+-- ===============================================
+-- This is the single entry point for Neovim
+-- It loads the main custom configuration module
+-- lovingly named "nesdiem"
+-- I keep this file minimal to keep startup fast
+-- ===============================================
 
 -- ===== Load core config =====
 require("nesdiem")
