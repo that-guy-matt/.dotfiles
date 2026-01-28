@@ -63,6 +63,7 @@ return {
         'vim',
         'vimdoc',
       },
+      sync_install = false,
 
       -- ==========================================================
       -- Enable Treesitter-based syntax highlighting
@@ -80,6 +81,10 @@ return {
         disable = { "python" }, -- optional: disable for languages that misbehave
       },
     },
+
+    config = function(_, opts)
+        require("nvim-treesitter.config").setup(opts)
+    end,
   },
 }
 
