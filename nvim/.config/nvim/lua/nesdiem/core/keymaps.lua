@@ -48,4 +48,4 @@ vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { desc = "Help
 -- =========
 -- Comments
 -- =========
--- TODO add keybindings for comment.nvim
+-- TODO: add keybindings for comment.nvim
