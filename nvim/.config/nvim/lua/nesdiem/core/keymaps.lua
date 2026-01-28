@@ -44,3 +44,8 @@ vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "List b
 
 -- Search help tags
 vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { desc = "Help tags" })
+
+-- =========
+-- Comments
+-- =========
+-- TODO add keybindings for comment.nvim
