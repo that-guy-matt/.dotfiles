@@ -14,11 +14,18 @@ vim.g.mapleader = " " -- set space as leader
 -- ==============
 vim.keymap.set("n", "<leader>w", vim.cmd.w)
 vim.keymap.set("n", "<leader>q", vim.cmd.q)
+vim.keymap.set("n", "<leader>wq", vim.cmd.wq)
 
 -- ================
 -- File navigation
 -- ================
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+
+-- ===============
+-- Window control
+-- ===============
+vim.keymap.set("n", "<leader>ws", vim.cmd.split)
+vim.keymap.set("n", "<leader>vs", vim.cmd.vsplit)
 
 -- ==========
 -- Telescope 
