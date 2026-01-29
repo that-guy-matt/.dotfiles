@@ -12,20 +12,22 @@ vim.g.mapleader = " " -- set space as leader
 -- ==============
 -- Save and quit
 -- ==============
-vim.keymap.set("n", "<leader>w", vim.cmd.w)
-vim.keymap.set("n", "<leader>q", vim.cmd.q)
-vim.keymap.set("n", "<leader>wq", vim.cmd.wq)
+vim.keymap.set("n", "<leader>w", vim.cmd.w, { desc = "Write file" })
+vim.keymap.set("n", "<leader>q", vim.cmd.bd, { desc = "Close file" }) 
+vim.keymap.set("n", "<leader>wq", vim.cmd.wq, { desc = "Write and quit" })
 
 -- ================
 -- File navigation
 -- ================
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Open netrw"})
+vim.keymap.set("n", "<leader>n", vim.cmd.bn, { desc = "Next buffer" })
+vim.keymap.set("n", "<leader>p", vim.cmd.bp, { desc = "Previous buffer" })
 
 -- ===============
 -- Window control
 -- ===============
-vim.keymap.set("n", "<leader>ws", vim.cmd.split)
-vim.keymap.set("n", "<leader>vs", vim.cmd.vsplit)
+vim.keymap.set("n", "<leader>ws", vim.cmd.split, { desc = "Split horizontally" })
+vim.keymap.set("n", "<leader>vs", vim.cmd.vsplit, {desc = "Split vertically" })
 
 -- ==========
 -- Telescope 

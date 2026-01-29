@@ -13,6 +13,7 @@ return {
       "nvim-lua/plenary.nvim",
       { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     },
+
     config = function()
       local ts = require("telescope")
 
@@ -51,7 +52,9 @@ return {
       -- Telescope setup
       -- ============
       ts.setup {
-        defaults = vim.tbl_extend("error", fullscreen_setup, {
+        defaults = vim.tbl_extend("force", fullscreen_setup, {
+          -- BUG: disable treesitter due to incompatibility with neovim 11.6
+          preview = { treesitter = false, },
           sorting_strategy = "ascending",
           path_display = { "filename_first" },
           mappings = {

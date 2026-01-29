@@ -63,7 +63,7 @@ return {
         'vim',
         'vimdoc',
       },
-      sync_install = false,
+      auto_install = true,
 
       -- ==========================================================
       -- Enable Treesitter-based syntax highlighting

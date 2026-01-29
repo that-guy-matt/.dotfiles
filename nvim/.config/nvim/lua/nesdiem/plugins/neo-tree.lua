@@ -3,6 +3,7 @@
 -- neo-tree.nvim plugin spec for Lazy.nvim
 -- File explorer with minimal, default behavior
 -- ============================================================
+-- TODO: design layout to look like telescope
 return {
   {
     "nvim-neo-tree/neo-tree.nvim",

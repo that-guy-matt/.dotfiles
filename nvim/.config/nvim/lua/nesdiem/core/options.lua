@@ -58,3 +58,8 @@ vim.o.confirm = true        -- raise dialog ask to save current file(s)
 -- ==========================
 vim.o.splitbelow = true   -- new horizontal splits open below
 vim.o.splitright = true   -- new vertical splits open to the right
+
+-- ======
+-- Misc.
+-- ======
+vim.o.timeoutlen = 300
