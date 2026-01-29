@@ -48,4 +48,22 @@ vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { desc = "Help
 -- =========
 -- Comments
 -- =========
--- TODO: add keybindings for comment.nvim
+-- toggle line comment
+vim.keymap.set("n", "<leader>/", 
+    function() 
+        require("Comment.api").toggle.linewise.current() 
+    end, { desc = "Toggle line comment"}
+)
+
+-- toggle block comment
+vim.keymap.set("n", "<leader>?", 
+    function()
+        require("Comment.api").toggle.blockwise.current()
+    end, { desc = "Toggle block comment" }
+)
+ 
+-- =========
+-- Neo-tree
+-- =========
+-- toggle neotree
+vim.keymap.set("n", "<leader>nt", "<cmd>Neotree toggle<CR>", { desc = "Toggle Neo-tree"})
