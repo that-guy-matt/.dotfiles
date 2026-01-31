@@ -26,16 +26,16 @@ return {
       terminalColors = true,
       colors = {
         palette = {},
-        theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
+        theme = { wave = {}, lotus = {}, dragon = {}, all = { ui = { bg_gutter = "none" }} },
       },
       overrides = function(colors)
         return {}
       end,
       theme = "wave",
-      background = {
-        dark = "wave",
-        light = "lotus",
-      },
+      -- background = {
+        -- dark = "wave",
+        -- light = "lotus",
+      -- },
     },
     -- Automatically apply Kanagawa on startup
     config = function(_, opts)

@@ -46,7 +46,6 @@ return {
         -- Configs
         'json',
         'yaml',
-        'toml',
         'ini',
         'dockerfile',
         'git_config',

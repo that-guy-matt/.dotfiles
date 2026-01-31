@@ -17,9 +17,21 @@ vim.o.cursorline = true       -- show what line the cursor is on
 -- Tabs and indentation
 -- =====================
 vim.o.expandtab = true   -- convert tabs to spaces
-vim.o.shiftwidth = 4     -- number of spaces for indentation, set to 4 for python
-vim.o.tabstop = 4        -- number of spaces a tab counts for
+vim.o.shiftwidth = 2     -- number of spaces for indentation
+vim.o.tabstop = 2        -- number of spaces a tab counts for
+vim.o.softtabstop = 2    -- editing a tab feels like 2 spaces
 vim.o.smartindent = true -- smart auto indenting
+vim.o.autoindent = true  -- copy indent from previous line
+
+-- python tabstop override to 4 spaces
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "python",
+  callback = function()
+    vim.opt_local.shiftwidth = 4
+    vim.opt_local.softtabstop = 4
+    vim.opt_local.tabstop = 4
+  end
+})
 
 -- ===========
 -- Appearance
