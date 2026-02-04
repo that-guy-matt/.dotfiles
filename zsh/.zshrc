@@ -31,6 +31,17 @@ source "$ZSH_CONFIG/aliases.zsh"
 # Powerlevel10k
 [[ -f "$HOME/.config/zsh/.p10k.zsh" ]] && source "$HOME/.config/zsh/.p10k.zsh"
 
+# Source Powerlevel10k if available
+if [[ -f "$ZSH_CONFIG/.p10k.zsh" ]]; then
+  echo "Sourcing .p10k.zsh" >> ~/zsh_debug.log
+  source "$ZSH_CONFIG/.p10k.zsh" >> ~/zsh_debug.log 2>&1
+fi
+
+echo "Finished sourcing .zshrc" >> ~/zsh_debug.log
+set +x  # Disable command tracing
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Platform specific PATHs
 case "$(uname)" in
@@ -43,17 +54,5 @@ case "$(uname)" in
 	;;
 esac
 
-clear
+# Call fastfetch
 fastfetch -l "Aperture"
-
-# Source Powerlevel10k if available
-if [[ -f "$ZSH_CONFIG/.p10k.zsh" ]]; then
-  echo "Sourcing .p10k.zsh" >> ~/zsh_debug.log
-  source "$ZSH_CONFIG/.p10k.zsh" >> ~/zsh_debug.log 2>&1
-fi
-
-echo "Finished sourcing .zshrc" >> ~/zsh_debug.log
-set +x  # Disable command tracing
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
