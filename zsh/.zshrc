@@ -43,6 +43,9 @@ set +x  # Disable command tracing
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# Call fastfetch
+fastfetch -l "Aperture"
+
 # Platform specific PATHs
 case "$(uname)" in
 	Darwin)
@@ -54,5 +57,3 @@ case "$(uname)" in
 	;;
 esac
 
-# Call fastfetch
-fastfetch -l "Aperture"
