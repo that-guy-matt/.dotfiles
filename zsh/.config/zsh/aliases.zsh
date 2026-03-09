@@ -6,3 +6,5 @@ alias la="ls -A --color=auto"
 alias ll="ls -alF --color=auto"
 alias l="ls -CF --color=auto"
 
+# custom app launchers
+alias codium="flatpak run com.vscodium.codium"

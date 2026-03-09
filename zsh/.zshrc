@@ -5,8 +5,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
-export PATH=$PATH:~/local/bin
 
 # path to zsh config files
 ZSH_CONFIG="$HOME/.config/zsh"
@@ -27,33 +25,24 @@ source "$ZSH_CONFIG/plugins.zsh"
 source "$ZSH_CONFIG/options.zsh"
 source "$ZSH_CONFIG/aliases.zsh"
 
-# Plugins
-# Powerlevel10k
-[[ -f "$HOME/.config/zsh/.p10k.zsh" ]] && source "$HOME/.config/zsh/.p10k.zsh"
-
-# Source Powerlevel10k if available
-if [[ -f "$ZSH_CONFIG/.p10k.zsh" ]]; then
-  echo "Sourcing .p10k.zsh" >> ~/zsh_debug.log
-  source "$ZSH_CONFIG/.p10k.zsh" >> ~/zsh_debug.log 2>&1
-fi
-
-echo "Finished sourcing .zshrc" >> ~/zsh_debug.log
 set +x  # Disable command tracing
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# Call fastfetch
-fastfetch -l "Aperture"
 
 # Platform specific PATHs
 case "$(uname)" in
 	Darwin)
 		export PATH="/opt/homebrew/bin:$PATH"
     source "$HOME/.work.zsh"
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+    export PATH=$PATH:~/local/bin
 	;;
 	Linux)
 		# unused at the moment
 	;;
 esac
+
+# Call fastfetch
+fastfetch -l "Aperture"
 
